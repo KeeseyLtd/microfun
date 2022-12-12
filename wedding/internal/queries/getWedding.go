@@ -41,7 +41,7 @@ func (h GetWedding) Handle(ctx context.Context, weddingID uuid.UUID) (domain.Wed
 	weddingDTO := domain.Wedding{
 		ID:          wedding.ID,
 		Names:       wedding.Names,
-		WeddingDate: wedding.WeddingDate,
+		WeddingDate: wedding.WeddingDate.UTC(),
 		Invitations: invites,
 	}
 
