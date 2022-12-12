@@ -1,0 +1,11 @@
+development:
+  dialect: postgres
+  datasource: host=localhost user=wedding-qr password=wedding-qr dbname=wedding-qr sslmode=disable
+  dir: sql/migrations
+  table: migrations
+
+testing:
+  dialect: postgres
+  datasource: host=localhost user=wedding-qr password=wedding-qr dbname=wedding-qr-test sslmode=disable
+  dir: sql/migrations
+  table: migrations

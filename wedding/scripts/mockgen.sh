@@ -1,0 +1,1 @@
+mockgen -destination=tests/mocks/createwedding.go -package=mocks github.com/KeeseyLtd/microfun/wedding/internal/events createWeddingCommand

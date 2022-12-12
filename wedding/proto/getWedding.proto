@@ -1,0 +1,41 @@
+syntax="proto3";
+
+option go_package = "/pb";
+
+import "google/protobuf/timestamp.proto";
+
+package wedding;
+
+message GetWedding {
+    string uuid = 1;
+}
+
+message Wedding {
+    string uuid = 1;
+    string names = 2;
+    google.protobuf.Timestamp weddingDate = 4;
+    repeated Invitation invitations = 5;
+}
+
+message Invitation{
+    enum Status {
+        Pending = 0;
+        Attending = 1;
+        NotAttending = 2;
+    }
+
+    string uuid = 1;
+    string names = 2;
+    Status status = 3;
+}
+
+message WeddingResponse {
+    enum Type {
+        Error = 0;
+        Success = 1;
+    }
+
+    Type type = 1;
+    Wedding wedding = 2;
+    int32 errorCode = 3;
+}
